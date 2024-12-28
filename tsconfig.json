@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "target": "es2019",
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./custom_typings", "./node_modules/@types"],
+    "strict": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts"]
+}
