@@ -1,8 +1,7 @@
 import { DATABASE_URL } from './config';
 import { Sequelize } from 'sequelize-typescript';
-// import * as db from '../src/models/index';
+import * as db from '../src/models';
 
-console.log(DATABASE_URL);
 const sequelize = new Sequelize(DATABASE_URL!, {
   timezone: '+05:30',
   benchmark: true,
@@ -14,6 +13,6 @@ const sequelize = new Sequelize(DATABASE_URL!, {
     }
   },
 });
-sequelize.addModels(Object.values([]));
+sequelize.addModels(Object.values(db));
 
 export { sequelize };

@@ -19,7 +19,9 @@ CREATE TABLE public.order_product_map (
 	id serial NOT NULL,
 	order_id int NOT NULL,
 	product_id int NOT NULL,
-	CONSTRAINT order_product_map_pk PRIMARY KEY (id)
+	CONSTRAINT order_product_map_pk PRIMARY KEY (id),
+	CONSTRAINT order_product_map_orders_fk FOREIGN KEY (order_id) REFERENCES public.orders(id),
+	CONSTRAINT order_product_map_products_fk FOREIGN KEY (product_id) REFERENCES public.products(id)
 );
 
 -- Insert data into products table

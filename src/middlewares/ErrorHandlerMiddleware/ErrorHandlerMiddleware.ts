@@ -12,7 +12,6 @@ export default class ErrorHandlerMiddleware {
     const message = err.message ?? 'Internal Server Error';
 
     if (status === 500) {
-      // eslint-disable-next-line no-console
       console.error(err);
     }
 
