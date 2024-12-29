@@ -10,6 +10,8 @@ app.use('/', router);
 
 router.get('/order', orderController.getOrders);
 
+router.get('/products', orderController.getProducts);
+
 router.get('/order/:id', orderController.getOrder);
 
 router.post('/order', orderController.createOrder);

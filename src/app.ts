@@ -15,6 +15,12 @@ const corsOptions: CorsOptions = {
 
 app.use(helmet());
 app.use(cors(corsOptions));
+app.use(
+  express.json({
+    // increase limit to 10mb
+    limit: '10mb',
+  })
+);
 app.use(express.urlencoded({ extended: false }));
 
 // setting API request rate limit for all requests
