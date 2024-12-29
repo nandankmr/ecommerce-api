@@ -19,7 +19,6 @@ export default class ErrorHandlerMiddleware {
       next();
     }
 
-    req.user?.transaction?.rollback();
     res.status(Number(status));
     res.json({ code: status, message, errorCode: err.errorCode });
   }
