@@ -19,7 +19,7 @@ This is a simple e-commerce app built using Node.js, Express(Typescript), Sequel
 - React-Bootstrap
 
 ## Demo
-I have deployed the app on Render.com. You can check it out using the link below.
+I have deployed the app on Render.com. You can check it out using the link below (Site may take a minute to load if it has been inactive for a while).
 
 [https://ecommerce-api-e5u1.onrender.com/](https://ecommerce-api-e5u1.onrender.com/)
 
