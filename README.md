@@ -43,7 +43,8 @@ Create a `.env` file in the root directory and provide your database connection 
 
 ```
 DATABASE_URL='postgres://[username]:[password]@[host]:[port]/[database]'
-PORT=3022 # Port number to run the server on (Default: 3000)
+# Port number to run the server on (Default: 3000)
+PORT=3022
 ```
 
 ### 3. Run Database Migrations
