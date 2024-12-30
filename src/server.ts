@@ -3,11 +3,13 @@ import app from './app';
 import { sequelize } from '../config/sequelize';
 import { PORT } from '../config/config';
 
+const port =  PORT ?? 3000;
+
 sequelize
   .authenticate()
   .then(() => {
     console.log('Connection to DB has been established successfully.');
-    app.listen(PORT, (): void => {
+    app.listen(port, (): void => {
       console.log(`Server running in port ${PORT}`);
     });
   })

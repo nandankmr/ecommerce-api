@@ -6,6 +6,7 @@ import { rateLimit } from 'express-rate-limit';
 import routes from './routes';
 import ErrorHandlerMiddleware from './middlewares/ErrorHandlerMiddleware';
 import { CORS_WHITELIST, RATE_LIMIT } from '../config/config';
+import path from 'path';
 
 const app: express.Application = express();
 const errorHandler: ErrorHandlerMiddleware = new ErrorHandlerMiddleware();
@@ -34,9 +35,13 @@ app.use(
     headers: true,
   })
 );
-
+const frontendPath = path.join(__dirname, '../../../ecommerce-web/dist');
+app.use(express.static(frontendPath));
 app.use('/api', routes);
 app.use(errorHandler.handleErrors);
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'index.html'));
+});
 
 app.set('trust proxy', '127.0.0.1');
 
