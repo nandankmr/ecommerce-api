@@ -38,10 +38,10 @@ app.use(
 const frontendPath = path.join(__dirname, '../../ecommerce-web/dist');
 app.use(express.static(frontendPath));
 app.use('/api', routes);
-app.use(errorHandler.handleErrors);
 app.get('*', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
+app.use(errorHandler.handleErrors);
 
 app.set('trust proxy', '127.0.0.1');
 

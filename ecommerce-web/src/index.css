@@ -159,3 +159,8 @@ button:focus-visible {
     transform: translateX(calc(100% + 10px));
 }
 
+.order-form { 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

@@ -85,7 +85,7 @@ const Dashboard = () => {
     if (isLoading) return <Loader />;
 
     return (
-        <div className="w-100 d-flex flex-column">
+        <div className="w-100 d-flex flex-column gap-3">
             <div className="d-flex align-items-center gap-2">
                 <Link to="/dashboard">
                     <Button
@@ -100,7 +100,7 @@ const Dashboard = () => {
                 {editId ? <h2>Edit Order</h2> : <h2>New Order</h2>}
             </div>
 
-            <Form onSubmit={formik.handleSubmit}>
+            <Form onSubmit={formik.handleSubmit} className="order-form">
                 <div>
                     <Label>Order Description</Label>
                     <Input
@@ -129,14 +129,16 @@ const Dashboard = () => {
                                     } else {
                                         formik.setFieldValue("selectedProducts", [...formik.values.selectedProducts, product.id])
                                     }
-                                }} className="d-flex gap-2 cursor-pointer bg-white rounded-3 p-2">
-                                    <Input
-                                        type="checkbox"
-                                        name={`selectedProducts[${product.id}]`}
-                                        value={product.id}
-                                        checked={formik.values.selectedProducts.includes(product.id)}
-                                        onChange={() => { }}
-                                    />
+                                }} className="d-flex gap-2 cursor-pointer bg-white rounded-3 p-2 border">
+                                    <div className="d-flex align-items-center">
+                                        <Input
+                                            type="checkbox"
+                                            name={`selectedProducts[${product.id}]`}
+                                            value={product.id}
+                                            checked={formik.values.selectedProducts.includes(product.id)}
+                                            onChange={() => { }}
+                                        />
+                                    </div>
                                     <div className="d-flex flex-column">
                                         <h5>{product.productName}</h5>
                                         <p className="mb-0">{product.productDescription}</p>
