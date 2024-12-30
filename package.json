@@ -1,11 +1,12 @@
 {
-  "name": "ecommerce-api",
+  "name": "ecommerce",
   "version": "1.0.0",
-  "description": "",
+  "description": "E-commerce order placement API",
   "main": "server.js",
   "scripts": {
     "start": "node dist/src/server.js",
     "dev": "nodemon src/server.ts",
+    "prepare-frontend": "cd ecommerce-web && npm i && npm run build && cd ..",
     "build": "tsc -p ."
   },
   "keywords": [],
